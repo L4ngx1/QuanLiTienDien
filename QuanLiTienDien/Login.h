@@ -110,6 +110,7 @@ namespace QuanLiTienDien {
 			this->Controls->Add(this->btnRegister);
 			this->Name = L"Login";
 			this->Text = L"Login";
+			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -126,6 +127,7 @@ namespace QuanLiTienDien {
 					MessageBox::Show("Login successful!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
 					TienDienApp^ app = gcnew TienDienApp();
 					app->ShowDialog(); // Show the Register form
+					this->Close();
 					return;
 				}
 			}
@@ -141,5 +143,7 @@ namespace QuanLiTienDien {
 		Register^ registerForm = gcnew Register();
 		registerForm->ShowDialog(); // Show the Register form
 	}
-	};
+	private: System::Void Login_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

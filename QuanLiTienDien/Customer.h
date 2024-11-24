@@ -11,19 +11,21 @@ namespace QuanLiTienDien {
         String^ Name;
         String^ Address;
         String^ PhoneNumber;
-        double ElecUsage;  // Double value for electricity usage
-
-        // Constructor accepting all fields
+        double ElecUsage;
         Customer(String^ id, String^ name, String^ address, String^ phoneNumber, double elecUsage)
         {
             this->ID = id;
             this->Name = name;
             this->Address = address;
             this->PhoneNumber = phoneNumber;
-            this->ElecUsage = elecUsage; // Correct assignment of double
+            this->ElecUsage = elecUsage;
         }
-        String^ GetElecUsageString() {
-            return ElecUsage.ToString("F2");  // Format to 2 decimal places
+        String^ ElectricityUsage() {
+            return ElecUsage.ToString("F2");
+        }
+        double CalculateBill(){
+            const double ratePerKWh = 1000;
+            return ElecUsage * ratePerKWh;
         }
     };
 }
