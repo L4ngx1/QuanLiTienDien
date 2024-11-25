@@ -14,11 +14,6 @@ namespace QuanLiTienDien {
             InitializeComponent();
             customers = gcnew System::Collections::Generic::List<Customer^>();
             dataGridView1->AutoGenerateColumns = false;
-            dataGridView1->Columns->Add("ID", "ID");
-            dataGridView1->Columns->Add("Name", "Name");
-            dataGridView1->Columns->Add("Address", "Address");
-            dataGridView1->Columns->Add("Phone", "Phone Number");
-            dataGridView1->Columns->Add("ElecUsage", "Electricity Usage");
         }
     protected:
         ~TienDienApp() {
@@ -28,6 +23,7 @@ namespace QuanLiTienDien {
             }
         }
     private:
+        System::ComponentModel::Container^ components;
         System::Collections::Generic::List<Customer^>^ customers;
         System::Windows::Forms::DataGridView^ dataGridView1;
         System::Windows::Forms::Button^ buttonAdd;
@@ -44,19 +40,17 @@ namespace QuanLiTienDien {
         System::Windows::Forms::Label^ lblElecUsage;
         System::Windows::Forms::GroupBox^ groupCustomerInfo;
         System::Windows::Forms::GroupBox^ groupActions;
-        System::ComponentModel::Container^ components;
         System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn1;
         System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn2;
         System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn3;
         System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn4;
         System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn5;
         System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn6;
-    private: System::Windows::Forms::TextBox^ txtSearch;
-
+        System::Windows::Forms::TextBox^ txtSearch;
         System::Windows::Forms::Button^ btnSearch;
         System::Windows::Forms::Label^ lblSearch;
-    private: System::Windows::Forms::Label^ lblID;
-    private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
+        System::Windows::Forms::Label^ lblID;
+        System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 #pragma region
     void InitializeComponent(void) {
         this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
@@ -101,49 +95,49 @@ namespace QuanLiTienDien {
         this->dataGridView1->Location = System::Drawing::Point(52, 247);
         this->dataGridView1->Name = L"dataGridView1";
         this->dataGridView1->RowHeadersWidth = 51;
-        this->dataGridView1->Size = System::Drawing::Size(816, 284);
+        this->dataGridView1->Size = System::Drawing::Size(765, 284);
         this->dataGridView1->TabIndex = 0;
         this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &TienDienApp::dataGridView1_CellContentClick);
         // 
         // dataGridViewTextBoxColumn1
         // 
         this->dataGridViewTextBoxColumn1->HeaderText = L"ID";
-        this->dataGridViewTextBoxColumn1->MinimumWidth = 6;
+        this->dataGridViewTextBoxColumn1->MinimumWidth = 7;
         this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
-        this->dataGridViewTextBoxColumn1->Width = 125;
+        this->dataGridViewTextBoxColumn1->Width = 80;
         // 
         // dataGridViewTextBoxColumn2
         // 
         this->dataGridViewTextBoxColumn2->HeaderText = L"Họ Tên";
-        this->dataGridViewTextBoxColumn2->MinimumWidth = 6;
+        this->dataGridViewTextBoxColumn2->MinimumWidth = 7;
         this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
-        this->dataGridViewTextBoxColumn2->Width = 125;
+        this->dataGridViewTextBoxColumn2->Width = 140;
         // 
         // dataGridViewTextBoxColumn3
         // 
         this->dataGridViewTextBoxColumn3->HeaderText = L"Địa Chỉ";
-        this->dataGridViewTextBoxColumn3->MinimumWidth = 6;
+        this->dataGridViewTextBoxColumn3->MinimumWidth = 7;
         this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
-        this->dataGridViewTextBoxColumn3->Width = 125;
+        this->dataGridViewTextBoxColumn3->Width = 120;
         // 
         // dataGridViewTextBoxColumn4
         // 
         this->dataGridViewTextBoxColumn4->HeaderText = L"Số Điện Thoại";
-        this->dataGridViewTextBoxColumn4->MinimumWidth = 6;
+        this->dataGridViewTextBoxColumn4->MinimumWidth = 7;
         this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
-        this->dataGridViewTextBoxColumn4->Width = 125;
+        this->dataGridViewTextBoxColumn4->Width = 110;
         // 
         // dataGridViewTextBoxColumn5
         // 
         this->dataGridViewTextBoxColumn5->HeaderText = L"Số Điện Tiêu Thụ (kWh)";
-        this->dataGridViewTextBoxColumn5->MinimumWidth = 6;
+        this->dataGridViewTextBoxColumn5->MinimumWidth = 7;
         this->dataGridViewTextBoxColumn5->Name = L"dataGridViewTextBoxColumn5";
         this->dataGridViewTextBoxColumn5->Width = 132;
         // 
         // dataGridViewTextBoxColumn6
         // 
         this->dataGridViewTextBoxColumn6->HeaderText = L"Số Tiền (VND)";
-        this->dataGridViewTextBoxColumn6->MinimumWidth = 6;
+        this->dataGridViewTextBoxColumn6->MinimumWidth = 7;
         this->dataGridViewTextBoxColumn6->Name = L"dataGridViewTextBoxColumn6";
         this->dataGridViewTextBoxColumn6->Width = 132;
         // 
@@ -284,7 +278,7 @@ namespace QuanLiTienDien {
         // 
         // txtSearch
         // 
-        this->txtSearch->Location = System::Drawing::Point(627, 222);
+        this->txtSearch->Location = System::Drawing::Point(570, 222);
         this->txtSearch->Name = L"txtSearch";
         this->txtSearch->Size = System::Drawing::Size(145, 22);
         this->txtSearch->TabIndex = 3;
@@ -292,7 +286,7 @@ namespace QuanLiTienDien {
         // 
         // btnSearch
         // 
-        this->btnSearch->Location = System::Drawing::Point(778, 222);
+        this->btnSearch->Location = System::Drawing::Point(727, 222);
         this->btnSearch->Name = L"btnSearch";
         this->btnSearch->Size = System::Drawing::Size(90, 22);
         this->btnSearch->TabIndex = 4;
@@ -302,16 +296,16 @@ namespace QuanLiTienDien {
         // 
         // lblSearch
         // 
-        this->lblSearch->Location = System::Drawing::Point(444, 225);
+        this->lblSearch->Location = System::Drawing::Point(392, 225);
         this->lblSearch->Name = L"lblSearch";
-        this->lblSearch->Size = System::Drawing::Size(177, 19);
+        this->lblSearch->Size = System::Drawing::Size(176, 19);
         this->lblSearch->TabIndex = 9;
         this->lblSearch->Text = L"Nhập ID khách hàng cần tìm:";
         this->lblSearch->Click += gcnew System::EventHandler(this, &TienDienApp::lblSearch_Click);
         // 
         // TienDienApp
         // 
-        this->ClientSize = System::Drawing::Size(972, 551);
+        this->ClientSize = System::Drawing::Size(911, 555);
         this->Controls->Add(this->lblSearch);
         this->Controls->Add(this->btnSearch);
         this->Controls->Add(this->txtSearch);
@@ -356,7 +350,22 @@ namespace QuanLiTienDien {
         }
         return true;
     }
-    private: System::Void buttonAdd_Click(System::Object^ sender, System::EventArgs^ e) {
+    void UpdateGridView() {
+        dataGridView1->Rows->Clear();
+        for each (Customer ^ customer in customers) {
+            // Add the row with customer information and calculated bill
+            array<String^>^ row = {
+                customer->ID,
+                customer->Name,
+                customer->Address,
+                customer->PhoneNumber,
+                customer->ElecUsage.ToString(),
+                customer->CalculateBill().ToString() // Display the calculated bill
+            };
+            dataGridView1->Rows->Add(row);
+        }
+    }
+    private:System::Void buttonAdd_Click(System::Object^ sender, System::EventArgs^ e) {
         // Check if all fields are filled
         if (String::IsNullOrEmpty(txtID->Text) || String::IsNullOrEmpty(txtName->Text) ||
             String::IsNullOrEmpty(txtAddress->Text) || String::IsNullOrEmpty(txtPhone->Text) ||
@@ -425,7 +434,7 @@ namespace QuanLiTienDien {
         txtPhone->Clear();
         txtElecUsage->Clear();
     }
-    private: System::Void buttonDelete_Click(System::Object^ sender, System::EventArgs^ e) {
+    private:System::Void buttonDelete_Click(System::Object^ sender, System::EventArgs^ e) {
         // Check if any row is selected
         if (dataGridView1->SelectedRows->Count == 0) {
             MessageBox::Show("Please select a customer to delete.");
@@ -446,29 +455,7 @@ namespace QuanLiTienDien {
             MessageBox::Show("Invalid selection.");
         }
     }
-        void UpdateGridView() {
-            dataGridView1->Rows->Clear();
-            for each (Customer ^ customer in customers) {
-                // Add the row with customer information and calculated bill
-                array<String^>^ row = {
-                    customer->ID,
-                    customer->Name,
-                    customer->Address,
-                    customer->PhoneNumber,
-                    customer->ElecUsage.ToString(),
-                    customer->CalculateBill().ToString() // Display the calculated bill
-                };
-                dataGridView1->Rows->Add(row);
-            }
-        }
-
-    private: System::Void TienDienApp_Load(System::Object^ sender, System::EventArgs^ e) {
-    }
-    private: System::Void lblSearch_Click(System::Object^ sender, System::EventArgs^ e) {
-    }
-    private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-    }
-    private: System::Void btnSearch_Click(System::Object^ sender, System::EventArgs^ e) {
+    private:System::Void btnSearch_Click(System::Object^ sender, System::EventArgs^ e) {
         String^ searchTerm = txtSearch->Text;
         if (String::IsNullOrEmpty(searchTerm)) {
             MessageBox::Show("Please enter an ID to search.");
@@ -494,9 +481,15 @@ namespace QuanLiTienDien {
             MessageBox::Show("Customer not found.");
         }
     }
-    private: System::Void txtSearch_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+    private:System::Void TienDienApp_Load(System::Object^ sender, System::EventArgs^ e) {
     }
-    private: System::Void lblElecUsage_Click(System::Object^ sender, System::EventArgs^ e) {
+    private:System::Void lblSearch_Click(System::Object^ sender, System::EventArgs^ e) {
+    }
+    private:System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+    }
+    private:System::Void txtSearch_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+    }
+    private:System::Void lblElecUsage_Click(System::Object^ sender, System::EventArgs^ e) {
     }
 };
 }
